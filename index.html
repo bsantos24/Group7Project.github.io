@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>4 pics, 1 word</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Questrial&display=swap" rel="stylesheet">
+  
+<style>
+ body {
+	margin-left: auto;
+	margin-right: auto;
+	 background-color: #435973;
+	 text-align: center;
+	 
+ }
+h2{
+    color: white;
+    font-size: 40px;
+    font-family: "Questrial";
+}
+p{
+    font-size: 30px;
+    color: white;
+    font-family: "Questrial";
+}
+.answerbox{
+    font-family: "Questrial";
+    background:transparent;
+	border: none;
+    width: 300px;
+    font-size: 30px;
+    color:white;  
+}
+.key{
+     height: 85px;
+    font-family: "Questrial";
+    font-size: 30px; 
+	border: 0px;
+	border-radius: 15px;
+	width: 9%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-left: 3px;
+	background-color: #ffffff;
+}
+.key:hover{
+background-color: #b0b0b0;
+}
+.Backspace{
+    height: 90px;
+    font-family: "Questrial";
+    font-size: 30px; 
+	border: 0px;
+	border-radius: 15px;
+	width: 200px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-left: 3px;
+	background-color: #ffffff;
+}
+.Backspace:hover{
+background-color: #b0b0b0;
+}
+.submit{
+    font-size:30px;
+	height: 60px;
+    background: #ffffff;
+    width: 150px;
+    font-family: "Questrial";
+    color:black;
+    margin-left: 300px;
+	border: none;
+	border-radius: 10px;
+}
+.submit:hover {
+background-color: #b0b0b0;
+}
+</style>
+
+<body onload="funcn()">
+<h2>4 pics, 1 word</h2>
+<div class="row">
+	<div class="column">
+<img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t1.18169-9/11163808_524278224377181_9099862396479391946_n.jpg?_nc_cat=111&ccb=1-5&_nc_sid=9267fe&_nc_ohc=g8J_S_CzP8QAX-9mNC5&_nc_ht=scontent.fmnl17-2.fna&oh=00_AT9g4JRIGs_MYNHX6vfTN7mVuW0-71JrlaL5npYgDgd0XQ&oe=6275ADC7"; width="250px";/>
+<img src="https://images.theconversation.com/files/380414/original/file-20210125-21-1ejqf79.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=900.0&fit=crop"; width="250px";/>
+</div>
+<div class="column">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp5X7Npch_B8QrPvvxa_2uW1KvG87H1Gn_Ve4RcEoJN67_BehC1M8yZG3lBZfgfOzoMjc&usqp=CAU"; width="250px";/>
+<img src="https://cdn.britannica.com/48/109048-050-2A7B0D5B/Boy-pet-cat.jpg"; width="250px";/>
+</div>
+<p>1 WORD: <input class="answerbox" id="myText"><button onclick="myFunction()" class="submit">Submit</button></p>
+<div class="container">
+    <div class="Keyboard">   
+       <div class="buttons">
+            <div class="row_1">
+                <button onclick="funct()" id="one" class="key">T</button>
+                <button onclick="funcp()" id="two" class="key">P</button>
+                <button onclick="funce()" id="three" class="key">E</button>
+                <button onclick="funca()" id="four" class="key">A</button>
+                <button onclick="funcDel()" class="Backspace"><i class="material-icons">backspace</i></button> 
+				<a href="file:///C:/Users/johnd/Downloads/Level2.html"><button id="five" class="key">Next</button></a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<p> Correct answer: </p>
+<p id="pet" ></p>
+
+<p id="score">Score: 0</p>
+
+
+<script> 
+var score = 0;
+function addScore (){
+  
+}
+
+function funcn(){
+ document.getElementById('five').disabled = true;
+}
+
+function funcDel(){
+  var valu= document.getElementById('myText').value;
+  var x= document.getElementById('myText').value.length;
+  var y= 1;
+  var z= x-y;
+  document.getElementById('myText').value=valu.slice(0,z);
+  document.getElementById('four').disabled = false;
+  document.getElementById('one').disabled = false;
+  document.getElementById('three').disabled = false;
+  document.getElementById('two').disabled = false;
+}
+
+function funca(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"A";
+  document.getElementById('four').disabled = true;
+ 
+}
+function funce(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"E";
+  document.getElementById('three').disabled = true;
+}
+function funct(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"T";
+  document.getElementById('one').disabled = true;
+}
+function funcp(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"P";
+  document.getElementById('two').disabled = true;
+}
+
+function myFunction() {  
+  var g= document.getElementById("myText").value;
+  document.getElementById("myText").value= ""; 
+
+if (g=="PET"||g=="pet"){ 
+    document.getElementById("pet").innerHTML= "PET";
+  
+}
+
+
+if (g=="PET"){
+  score++;
+  document.getElementById ('score').innerHTML= "Score:"+score;
+  document.getElementById('five').disabled = false;
+}
+document.getElementById('one').disabled = false;
+  document.getElementById('two').disabled = false;
+  document.getElementById('three').disabled = false;
+  document.getElementById('four').disabled = false;
+}
+
+
+
+
+ </script>
+</body>
+</html>

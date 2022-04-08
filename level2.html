@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>4 pics, 1 word</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Questrial&display=swap" rel="stylesheet">
+  
+<style>
+ body {
+	margin-left: auto;
+	margin-right: auto;
+	 background-color: #435973;
+	 text-align: center;
+	 
+ }
+h2{
+    color: white;
+    font-size: 40px;
+    font-family: "Questrial";
+}
+p{
+    font-size: 30px;
+    color: white;
+    font-family: "Questrial";
+}
+.answerbox{
+    font-family: "Questrial";
+    background:transparent;
+	border: none;
+    width: 300px;
+    font-size: 30px;
+    color:white;  
+}
+.key{
+     height: 85px;
+    font-family: "Questrial";
+    font-size: 30px; 
+	border: 0px;
+	border-radius: 15px;
+	width: 9%;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-left: 3px;
+	background-color: #ffffff;
+}
+.key:hover{
+background-color: #b0b0b0;
+}
+.Backspace{
+    height: 90px;
+    font-family: "Questrial";
+    font-size: 30px; 
+	border: 0px;
+	border-radius: 15px;
+	width: 200px;
+	margin-bottom: 0px;
+	margin-top: 0px;
+	margin-right: 3px;
+	margin-left: 3px;
+	background-color: #ffffff;
+}
+.Backspace:hover{
+background-color: #b0b0b0;
+}
+.submit{
+    font-size:30px;
+	height: 60px;
+    background: #ffffff;
+    width: 150px;
+    font-family: "Questrial";
+    color:black;
+    margin-left: 300px;
+	border: none;
+	border-radius: 10px;
+}
+.submit:hover {
+background-color: #b0b0b0;
+}
+</style>
+
+<body onload="funcn()">
+<h2>4 pics, 1 word</h2>
+<div class="row">
+	<div class="column">
+<img src="https://www.collinsdictionary.com/images/full/octopus_236291386.jpg"; width="250px";/>
+<img src="https://www.collinsdictionary.com/images/full/spider_630704852_1000.jpg"; width="250px";/>
+</div>
+<div class="column">
+<img src="https://www.familyeducation.com/sites/default/files/styles/large/public/2018-02/8%20Ball%20Feature.jpg?itok=9kRK6EJw"; width="250px";/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/15/8_playing_cards.jpg"; width="250px";/>
+</div>
+<p>1 WORD: <input class="answerbox" id="myText"><button onclick="myFunction()" class="submit">Submit</button></p>
+<div class="container">
+    <div class="Keyboard">   
+       <div class="buttons">
+            <div class="row_1">
+                <button onclick="funch()" id="one" class="key">H</button>
+                <button onclick="funcg()" id="two" class="key">G</button>
+                <button onclick="funce()" id="three" class="key">E</button>
+                <button onclick="funct()" id="four" class="key">T</button>
+				<button onclick="funci()" id="five" class="key">I</button>
+				<button onclick="funco()" id="six" class="key">O</button>
+                <button onclick="funcDel()" class="Backspace"><i class="material-icons">backspace</i></button> 
+				<a href="file:///C:/Users/johnd/Downloads/Level3.html"><button id="seven" class="key">Next</button></a>
+            </div>
+        </div>
+    </div>
+  </div>
+
+<p> Correct answer: </p>
+<p id="eight" ></p>
+
+<p id="score">Score: 0</p>
+
+
+<script> 
+var score = 0;
+function addScore (){
+  
+}
+
+function funcn(){
+ document.getElementById('seven').disabled = true;
+}
+
+function funcDel(){
+  var valu= document.getElementById('myText').value;
+  var x= document.getElementById('myText').value.length;
+  var y= 1;
+  var z= x-y;
+  document.getElementById('myText').value=valu.slice(0,z);
+  document.getElementById('four').disabled = false;
+  document.getElementById('one').disabled = false;
+  document.getElementById('three').disabled = false;
+  document.getElementById('two').disabled = false;
+  document.getElementById('five').disabled = false;
+  document.getElementById('six').disabled = false;
+}
+
+function funch(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"H";
+  document.getElementById('one').disabled = true;
+ 
+}
+function funcg(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"G";
+  document.getElementById('two').disabled = true;
+}
+function funce(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"E";
+  document.getElementById('three').disabled = true;
+}
+function funct(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"T";
+  document.getElementById('four').disabled = true;
+}
+function funci(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"I";
+  document.getElementById('five').disabled = true;
+}
+function funco(){
+  var valu= document.getElementById('myText').value;
+  document.getElementById('myText').value= valu+"O";
+  document.getElementById('six').disabled = true;
+}
+
+function myFunction() {  
+  var g= document.getElementById("myText").value;
+  document.getElementById("myText").value= ""; 
+
+if (g=="EIGHT"||g=="eight"){ 
+    document.getElementById("eight").innerHTML= "EIGHT";
+  
+}
+
+
+if (g=="EIGHT"){
+  score++;
+  document.getElementById ('score').innerHTML= "Score:"+score;
+  document.getElementById('seven').disabled = false;
+}
+document.getElementById('one').disabled = false;
+  document.getElementById('two').disabled = false;
+  document.getElementById('three').disabled = false;
+  document.getElementById('four').disabled = false;
+  document.getElementById('five').disabled = false;
+  document.getElementById('six').disabled = false;
+}
+
+
+
+
+ </script>
+</body>
+</html>
